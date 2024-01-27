@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Roboto+Mono:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap');
+
+body,
+html {
+  font-family: 'Outfit', sans-serif;
+}
+
+@layer utilities {
+  @variants responsive {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+  }
+}
+
+.modal-backdrop {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(7px);
+}
+
+.input-with-placeholder {
+  /* width: 250px; */
+  position: relative;
+}
+.input-with-placeholder label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  transition: 300ms all;
+  /* font-size: 20px; */
+  @apply text-stone-500;
+}
+.input-with-placeholder input {
+  width: 100%;
+  height: 40px;
+  padding: 0 8px;
+  text-align: left;
+}
+.input-with-placeholder input:valid + label,
+.input-with-placeholder input:focus + label {
+  height: 40%;
+  opacity: 0.4;
+  padding-left: 0;
+  transform: translateY(-80%);
+  font-weight: 500;
+  font-size: 14px;
+}
